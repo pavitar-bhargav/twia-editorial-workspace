@@ -1,7 +1,8 @@
 # This Week in AI — Editorial desk
 
-A three-pane desk for the newsletter: clip sources, synthesize a brief whose facts have to survive a quote check, then edit a draft with rules that run immediately and a model pass that is optional.
+**Live Demo:** [https://twia-editorial-workspace.vercel.app](https://twia-editorial-workspace.vercel.app)
 
+A three-pane desk for the newsletter: clip sources, synthesize a brief whose facts have to survive a quote check, then edit a draft with rules that run immediately and a model pass that is optional.
 The desk opens on the work. There is no marketing page.
 
 ## What it does
