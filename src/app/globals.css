@@ -1,26 +1,222 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-paper: #faf8f5;
+  --color-stone: #f3f1ec;
+  --color-sheet: #ffffff;
+  --color-ink: #141413;
+  --color-slate: #5c5a55;
+  --color-line: #e6e4dd;
+  --color-terra: #c84b31;
+  --color-terra-deep: #a33d28;
+  --color-forest: #1e3a2f;
+  --font-sans: var(--font-inter), "Helvetica Neue", Arial, sans-serif;
+  --font-serif: var(--font-newsreader), "Iowan Old Style", Palatino, serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+  height: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #faf8f5;
+  color: #141413;
+  font-family: var(--font-sans);
+}
+
+:focus-visible {
+  outline: 2px solid #1e3a2f;
+  outline-offset: 2px;
+}
+
+::selection {
+  background: rgba(200, 75, 49, 0.18);
+}
+
+.hl-long {
+  background: #fef3c7;
+  box-shadow: inset 0 -2px 0 #d97706;
+}
+.hl-severe {
+  background: #fee2e2;
+  box-shadow: inset 0 -2px 0 #b91c1c;
+}
+.hl-passive {
+  background: #e0f2fe;
+  box-shadow: inset 0 -2px 0 #0284c7;
+}
+.hl-jargon {
+  background: #fce7f3;
+  box-shadow: inset 0 -2px 0 #db2777;
+}
+.hl-filler {
+  background: #f3e8ff;
+  box-shadow: inset 0 -2px 0 #7c3aed;
+}
+.hl-claim {
+  background: #f7f1e8;
+  box-shadow: inset 0 -2px 0 #9a3412;
+}
+.hl-model {
+  box-shadow: inset 0 -2px 0 #141413;
+}
+
+.draft-shell {
+  position: relative;
+  min-height: 52vh;
+}
+
+.draft-back,
+.draft-input {
+  font-family: var(--font-newsreader), "Iowan Old Style", Palatino, serif;
+  font-size: 18.5px;
+  line-height: 1.65;
+  letter-spacing: -0.003em;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+.draft-input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  resize: none;
+  overflow: hidden;
+  color: transparent;
+  caret-color: #141413;
+  background: transparent;
+}
+
+.draft-input::selection {
+  color: #141413;
+  background: rgba(200, 75, 49, 0.18);
+}
+
+.draft-input::placeholder {
+  color: #8a8680;
+}
+
+.draft-back {
+  min-height: 52vh;
+  color: #141413;
+}
+
+.mark-quote {
+  background: #fef3c7;
+}
+
+.diff-del {
+  color: #5c5a55;
+  text-decoration: line-through;
+  background: #f3f1ec;
+}
+
+.diff-ins {
+  background: #fef3c7;
+  box-shadow: inset 0 -2px 0 #c84b31;
+}
+
+.md-body {
+  font-family: var(--font-newsreader), Palatino, serif;
+  font-size: 17.5px;
+  line-height: 1.6;
+}
+
+.md-body h1 {
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  margin: 0 0 0.75rem;
+}
+
+.md-body h2 {
+  font-size: 1.35rem;
+  font-weight: 500;
+  margin: 1.75rem 0 0.55rem;
+}
+
+.md-body h3 {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin: 1.4rem 0 0.4rem;
+}
+
+.md-body p,
+.md-body ul,
+.md-body ol,
+.md-body blockquote {
+  margin: 0.65rem 0;
+}
+
+.md-body ul,
+.md-body ol {
+  padding-left: 1.15rem;
+}
+
+.md-body ul {
+  list-style: disc;
+}
+
+.md-body ol {
+  list-style: decimal;
+}
+
+.md-body a {
+  color: #1e3a2f;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.md-body code {
+  font-family: var(--font-jetbrains), ui-monospace, monospace;
+  font-size: 0.86em;
+}
+
+.md-body blockquote {
+  border-left: 2px solid #c84b31;
+  color: #5c5a55;
+  padding-left: 0.9rem;
+}
+
+.md-body hr {
+  border: 0;
+  border-top: 1px solid #e6e4dd;
+  margin: 1.4rem 0;
+}
+
+.md-body table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.45;
+  margin: 0.8rem 0 1.2rem;
+}
+
+.md-body th,
+.md-body td {
+  border-bottom: 1px solid #e6e4dd;
+  padding: 0.5rem 0.45rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.md-body th {
+  font-family: var(--font-jetbrains), ui-monospace, monospace;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #5c5a55;
 }
